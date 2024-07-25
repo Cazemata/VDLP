@@ -1,0 +1,328 @@
+@font-face {
+    font-family: Vodafone;
+    src: url(res/Vodafone.ttf);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f2f2f2;
+    font-family: Vodafone;
+}
+
+.container {  
+    height: 100%;
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1.5fr 2fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "left-bar dashboard dashboard dashboard dashboard"
+      "left-bar dashboard dashboard dashboard dashboard"
+      "left-bar dashboard dashboard dashboard dashboard"
+      "left-bar dashboard dashboard dashboard dashboard"
+      "left-bar dashboard dashboard dashboard dashboard";
+  }
+  
+.left-bar {
+    grid-area: left-bar;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.logo {
+    padding: 16px;
+}
+
+.menu {
+    padding: 40px 16px 16px 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+
+}
+
+.item:hover {
+    color:#E60000;
+    cursor: pointer;
+    fill:#E60000;
+}
+
+.active {
+    font-weight: 800;
+}
+
+.bottom-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 16px;
+}
+
+select {
+    height: 48px;
+    border: 1px solid #0D0D0D;
+    border-radius: 6px;
+    padding: 16px;
+    background: url(res/arrow-down.svg) no-repeat right white;
+    background-origin: content-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.dropdown {
+    overflow: hidden;
+
+}
+  
+.dashboard {
+    padding: 20px 20px 20px 0px;  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 10fr 3fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-areas:
+        "header header search-bar user"
+        "banner banner banner right-bar"
+        "cards cards cards right-bar"
+        ". . . right-bar"
+        ". . . right-bar";
+    grid-area: dashboard;
+}
+  
+.header { 
+    grid-area: header;
+    font-size: 40px;
+    line-height: 50px; 
+}
+  
+.search-bar { 
+    grid-area: search-bar;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.search {
+    padding: 0px 16px 0px 16px;
+    background: url(/res/search.svg) no-repeat right white;
+    background-origin: content-box;
+}
+  
+.banner {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);   
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 20px;
+    grid-auto-flow: column;
+    grid-template-areas:
+        "cta image image";
+    grid-area: banner;
+    overflow: hidden;
+}
+  
+.cta {
+    display: flex;
+    flex-direction: column; 
+    grid-area: cta;
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    gap: 20px; 
+}
+
+.cta-btn {
+    width: 100%;
+    height: 44px;
+    background-color: #E60000;
+    border-radius: 6px;
+    border: none;
+    align-items: flex-end;
+    text-decoration: none;
+    color: white;
+    line-height: 26px;
+    text-align: center;
+}
+
+.cta-btn:hover {
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 242px;
+    height: 48px;
+    border-radius: 6px;
+    border: 1px solid #CCCCCC;
+}
+
+input[type=text]:focus {
+    height: 48px;
+    border-radius: 6px;
+    border: 1px solid #CCCCCC;
+}
+
+.image { 
+    grid-area: image;
+    background-image: url(res/image.jpg); 
+}
+  
+.user { 
+    grid-area: user;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.user-role {
+    color: #7E7E7E;
+}
+
+img {
+    border-radius: 20px;
+    overflow: hidden;
+}
+  
+.right-bar { 
+    grid-area: right-bar;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);  
+}
+  
+.cards {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "title title title"
+        "card1 card2 card3";
+    grid-area: cards;
+  
+}
+
+.img1 {
+    background-image: url(res/card-image1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px;
+}
+
+.img2 {
+    background-image: url(res/card-image2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px;
+}
+
+.img3 {
+    background-image: url(res/card-image3.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px;
+}
+
+.title { 
+    grid-area: title;
+    font-size: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.content {
+    padding: 20px;
+}
+
+.h1 {
+    font-size: 24px;
+}
+
+.h2 {
+    font-size: 18px;
+}
+
+.desc {
+    font-size: 14px;
+    height: 50px;
+}
+
+.end {
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    color: #BD0000;
+}
+
+.btn-link {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+}
+
+.btn-link:hover {
+    cursor: pointer;
+}
+  
+.card1 { 
+    grid-area: card1;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);
+    overflow: hidden;
+}
+  
+.card2 { 
+    grid-area: card2; 
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);
+    overflow: hidden; 
+}
+  
+.card3 { 
+    grid-area: card3;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);
+    overflow: hidden;
+}
