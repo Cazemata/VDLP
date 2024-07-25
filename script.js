@@ -6,7 +6,7 @@ function addData(data) {
 }
 
 const results = item =>
-    '<div class="card card1">
+    `<div class="card card1">
             <div class="img1"></div>
             <div class="content">
                 <div class="card-title">${item.name}</div>
@@ -21,4 +21,4 @@ const results = item =>
                     </div>      
                 </div>
             </div>
-          </div>'
+          </div>`;
