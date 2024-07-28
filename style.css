@@ -228,9 +228,19 @@ img {
     grid-auto-flow: row;
     grid-template-areas:
         "title title title"
+        "card-row card-row card-row";
+    grid-area: cards;  
+}
+
+.card-row {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
         "card1 card2 card3";
-    grid-area: cards;
-  
+    grid-area: card-row;  
 }
 
 .img1 {
@@ -294,6 +304,21 @@ p {
     text-overflow: ellipsis;
     overflow: hidden;
     max-height: 48px;
+
+    padding: 20px;
+}
+
+.h1 {
+    font-size: 24px;
+}
+
+.h2 {
+    font-size: 18px;
+}
+
+.desc {
+    font-size: 14px;
+    height: 50px;
 }
 
 .end {
@@ -321,7 +346,7 @@ p {
 .btn-link:hover {
     cursor: pointer;
 }
-  
+
 .card1 { 
     grid-area: card1;
     background-color: white;
