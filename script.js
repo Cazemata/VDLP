@@ -21,4 +21,4 @@ const results = item =>
                     </div>      
                 </div>
             </div>
-          </div>`;
+          </div>`
