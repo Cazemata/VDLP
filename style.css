@@ -26,6 +26,7 @@ html, body {
   }
   
 .left-bar {
+    position: fixed;
     grid-area: left-bar;
     height: 100%;
     display: flex;
@@ -105,6 +106,7 @@ select {
         ". . . right-bar"
         ". . . right-bar";
     grid-area: dashboard;
+    overflow-x: hidden;
 }
   
 .header { 
@@ -234,12 +236,9 @@ img {
 
 .card-row {  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
     gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "card1 card2 card3";
     grid-area: card-row;  
 }
 
@@ -347,24 +346,7 @@ p {
     cursor: pointer;
 }
 
-.card1 { 
-    grid-area: card1;
-    background-color: white;
-    border-radius: 6px;
-    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);
-    overflow: hidden;
-}
-  
-.card2 { 
-    grid-area: card2; 
-    background-color: white;
-    border-radius: 6px;
-    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);
-    overflow: hidden; 
-}
-  
-.card3 { 
-    grid-area: card3;
+.card {
     background-color: white;
     border-radius: 6px;
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);

@@ -1,7 +1,7 @@
 import data from './content.json' with { type: "json" };
 
 const getCardHtml = (item, index) =>
-    `<div class="card card${(index % 3 + 1)}">
+    `<div class="card">
         <div class="img1"></div>
         <div class="content">
             <div class="card-title">${item.Title}</div>
