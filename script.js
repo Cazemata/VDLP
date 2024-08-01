@@ -1,8 +1,28 @@
-import data from './content.json' with { type: "json" };
+import content from './content.json' with { type: "json" };
+import category from './categories.json' with { type: "json"};
+
+// const card1 = Object.assign({}, content, category);
+// const card2 = {};
+// for (var key in content) card2[key]=content[key];
+// for (var key in category) card2[key]=category[key];
+// const card3 = { ...content, ...category };
+
+// console.log(card1, card2, card3)
+
+const [source, target] = content.length > category.length
+        ? [content, category]
+        : [category, content];
+
+const card = source.map(object => {
+    const matched = target.find(element => element.CategoryId === object.CategoryId);
+    return { ...object, ...matched };
+});
+
+console.log(card);
 
 const getCardHtml = (item, index) =>
     `<div class="card">
-        <div class="img1"></div>
+        <div class="img" style="background-image:${item.Image};"></div>
         <div class="content">
             <div class="card-title">${item.Title}</div>
             <div class="author">${item.Author}</div>
@@ -18,7 +38,7 @@ const getCardHtml = (item, index) =>
         </div>
     </div>`;
 
-const cards = data.map(function (item, index) {
+const cards = card.map(function (item, index) {
     return getCardHtml(item, index);
 });
 

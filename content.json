@@ -2,41 +2,49 @@
     {
         "Title":"Title1",
         "Author":"Author1",
-        "Desc":"Desc1"
+        "Desc":"Desc1",
+        "CategoryId": 1
     },
     {
         "Title":"Title2",
         "Author":"Author2",
-        "Desc":"Desc2"
+        "Desc":"Desc2",
+        "CategoryId": 3
     },
     {
         "Title":"Title1",
         "Author":"Author1",
-        "Desc":"Desc1"
+        "Desc":"Desc1",
+        "CategoryId": 5
     },
     {
         "Title":"Title2",
         "Author":"Author2",
-        "Desc":"Desc2"
+        "Desc":"Desc2",
+        "CategoryId": 3
     },
     {
         "Title":"Title1",
         "Author":"Author1",
-        "Desc":"Desc1"
+        "Desc":"Desc1",
+        "CategoryId": 2
     },
     {
         "Title":"Title2",
         "Author":"Author2",
-        "Desc":"Desc2"
+        "Desc":"Desc2",
+        "CategoryId": 6
     },
     {
         "Title":"Title1",
         "Author":"Author1",
-        "Desc":"Desc1"
+        "Desc":"Desc1",
+        "CategoryId": 4
     },
     {
         "Title":"Title2",
         "Author":"Author2",
-        "Desc":"Desc2"
+        "Desc":"Desc2",
+        "CategoryId": 5
     }
 ]
