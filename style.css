@@ -188,7 +188,9 @@ input[type=text]:focus {
 
 .image { 
     grid-area: image;
-    background-image: url(res/image.jpg); 
+    background-image: url(res/mountain.jpg);
+    background-position: center;
+    background-size: cover;
 }
   
 .user { 
