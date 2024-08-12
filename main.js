@@ -1,5 +1,5 @@
 import content from './content.json' with { type: "json" }
-import category from './categories.json' with { type: "json"}
+import category from './categories.json' with { type: "json" }
 
 window.main = new class {
     constructor() {
