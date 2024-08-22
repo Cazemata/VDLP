@@ -3,9 +3,12 @@ import category from './categories.json' with { type: "json" }
 
 window.main = new class {
     constructor() {
+        this.storageTest()
         this.initMenu()
         document.querySelector("#search").addEventListener("keyup", () => this.mySearch())
-        document.querySelector(".card-row").innerHTML = this.getData().map((item, index) => this.getCardHtml(item, index)).join("")
+        document.querySelector(".card-row").innerHTML = this.getData().map((item, index) => this.getCardHtml(item, index)).join("") 
+        document.querySelector("#theme").addEventListener("change", () => this.setStyleSource("light", this.options[this.selectedIndex].value))
+
     }
 
     getData() {
@@ -68,4 +71,23 @@ window.main = new class {
         results.map(item => item.style.display = "block")
         return results
     }
+    
+    storageTest() {
+        const container = document.querySelector(".dashboard")
+        const colorPicker = document.querySelector("#color-picker")
+        const color = localStorage.getItem("favColor")
+            if (color) {
+                container.style.backgroundColor = color
+                colorPicker.value = color
+            }
+        colorPicker.addEventListener("change", (e) => {
+        container.style.backgroundColor = e.target.value
+        localStorage.setItem("favColor", e.target.value)
+        })
+    }
+
+    setStyleSource(linkID, sourceLoc) {
+        var theLink = document.getElementById(linkID)
+        theLink.href = sourceLoc
+    }      
 }

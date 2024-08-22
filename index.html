@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <link href="style.css" rel="stylesheet" />
+  <link href="light-theme.css" rel="stylesheet" title="light-theme" id="light" />
+  <script type="module" src="main.js" defer></script>
 </head>
-
-<body>
-  <div class="container">
+<body class="light">
+  <div class="wrapper">
     <div class="left-bar">
       <div class="top-menu">
         <div class="logo">
@@ -66,9 +66,10 @@
         </div>
       </div>
       <div class="bottom-menu">
-        <select class="dropdown" name="account">
-          <option value="personal">Personal</option>
-          <option value="business">Business</option>
+        <label for="theme">Pick a theme</label>
+        <select class="dropdown" id="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
         </select>
         <div class="item">
           <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,6 +130,8 @@
     </div>
     <div class="dashboard">
       <div class="header">Dashboard</div>
+      <label for="color-picker">Pick a color</label>
+      <input type="color" id="color-picker" />
       <div class="search-bar">
         <input class="search" type="text" id="search" placeholder="Search...">
       </div>
@@ -221,7 +224,5 @@
     </div>
   </div>
   </div>
-  <script type="module" src="main.js"></script>
 </body>
-
 </html>
