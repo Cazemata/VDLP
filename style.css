@@ -3,13 +3,16 @@
     src: url(res/Vodafone.ttf);
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     font-family: Vodafone;
+    background-color: var(--background);
+    color: var(--text-color);
 }
 
-.wrapper {  
+.wrapper {
     height: 100%;
     display: grid;
     grid-template-columns: 240px 1fr 1fr 1fr 1fr;
@@ -17,13 +20,13 @@ html, body {
     gap: 20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
-      "left-bar dashboard dashboard dashboard dashboard"
-      "left-bar dashboard dashboard dashboard dashboard"
-      "left-bar dashboard dashboard dashboard dashboard"
-      "left-bar dashboard dashboard dashboard dashboard"
-      "left-bar dashboard dashboard dashboard dashboard";
-  }
-  
+        "left-bar dashboard dashboard dashboard dashboard"
+        "left-bar dashboard dashboard dashboard dashboard"
+        "left-bar dashboard dashboard dashboard dashboard"
+        "left-bar dashboard dashboard dashboard dashboard"
+        "left-bar dashboard dashboard dashboard dashboard";
+}
+
 .left-bar {
     position: fixed;
     grid-area: left-bar;
@@ -31,6 +34,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--secondary);
 }
 
 .logo {
@@ -51,6 +55,12 @@ html, body {
 
 }
 
+.item:hover {
+    color: var(--link);
+    cursor: pointer;
+    fill: var(--link);
+}
+
 .active {
     font-weight: 800;
 }
@@ -68,6 +78,9 @@ select {
     height: 48px;
     border-radius: 6px;
     padding: 16px;
+    border: 1px solid var(--primary);
+    background: url(res/arrow-down.svg) no-repeat right var(--secondary);
+    background-origin: content-box;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -75,9 +88,9 @@ select {
 .dropdown {
     overflow: hidden;
 }
-  
+
 .dashboard {
-    padding: 20px 20px 20px 0px;  
+    padding: 20px 20px 20px 0px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px 10fr 3fr 1fr 1fr;
@@ -96,27 +109,28 @@ select {
     grid-area: dashboard;
     overflow-x: hidden;
 }
-  
-.header { 
+
+.header {
     grid-area: header;
     font-size: 40px;
-    line-height: 50px; 
+    line-height: 50px;
 }
-  
-.search-bar { 
+
+.search-bar {
     grid-area: search-bar;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
 }
 
 .search {
     padding: 0px 16px 0px 16px;
+    background: url(/res/search.svg) no-repeat right var(--secondary);
+    background-origin: content-box;
 }
-  
+
 .banner {
     min-height: 300px;
     border-radius: 6px;
-    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);   
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -126,11 +140,13 @@ select {
         "cta image image";
     grid-area: banner;
     overflow: hidden;
+    background-color: var(--secondary);
+    box-shadow: 0px 2px 8px 0px var(--shadow-color);
 }
-  
+
 .cta {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     grid-area: cta;
     padding: 30px;
     padding-top: 0px;
@@ -150,6 +166,8 @@ select {
     text-decoration: none;
     line-height: 26px;
     text-align: center;
+    background-color: var(--link);
+    color: var(--secondary);
 }
 
 .cta-btn:hover {
@@ -160,26 +178,28 @@ input[type=text] {
     width: 242px;
     height: 48px;
     border-radius: 6px;
+    border: 1px solid var(--input-border);
 }
 
 input[type=text]:focus {
     height: 48px;
     border-radius: 6px;
+    border: 1px solid var(--input-border);
 }
 
-.image { 
+.image {
     grid-area: image;
     background-image: url(res/mountain.jpg);
     background-position: center;
     background-size: cover;
 }
-  
-.user { 
+
+.user {
     grid-area: user;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .user-data {
@@ -189,17 +209,23 @@ input[type=text]:focus {
     align-items: flex-end;
 }
 
+.user-role {
+    color: var(--special-text);
+}
+
 img {
     border-radius: 20px;
     overflow: hidden;
 }
-  
-.right-bar { 
+
+.right-bar {
     grid-area: right-bar;
     border-radius: 6px;
+    background-color: var(--secondary);
+    box-shadow: 0px 2px 8px 0px var(--shadow-color);
 }
-  
-.cards {  
+
+.cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px 1fr;
@@ -208,15 +234,15 @@ img {
     grid-template-areas:
         "title title title"
         "card-row card-row card-row";
-    grid-area: cards;  
+    grid-area: cards;
 }
 
-.card-row {  
+.card-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto-fill, 1fr);
     gap: 20px 20px;
-    grid-area: card-row;  
+    grid-area: card-row;
 }
 
 .img {
@@ -226,13 +252,13 @@ img {
 }
 
 
-.title { 
+.title {
     grid-area: title;
     font-size: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
 }
 
 .content {
@@ -294,7 +320,7 @@ p {
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    color: #BD0000;
+    color: var(--link);
 }
 
 .btn-link {
@@ -312,4 +338,6 @@ p {
 .card {
     border-radius: 6px;
     overflow: hidden;
+    background-color: var(--secondary);
+    box-shadow: 0px 2px 8px 0px var(--shadow-color);
 }

@@ -1,55 +1,10 @@
-html, body {
-    background-color: #25282B;
-}
-
-.left-bar {
-    background-color: white;
-}
-
-.right-bar {
-    background-color: white;
-    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);
-}
-
-.item:hover {
-    color:#E60000;
-    cursor: pointer;
-    fill:#E60000;
-}
-
-select {
-    border: 1px solid #0D0D0D;
-    background: url(res/arrow-down.svg) no-repeat right white;
-    background-origin: content-box;
-}
-
-.search {
-    background: url(/res/search.svg) no-repeat right white;
-    background-origin: content-box;
-}
-
-.banner {
-    background-color: white;
-}
-
-.cta-btn {
-    background-color: #E60000;
-    color: white;
-}
-
-input[type=text] {
-    border: 1px solid #CCCCCC;
-}
-
-input[type=text]:focus {
-    border: 1px solid #CCCCCC;
-}
-
-.user-role {
-    color: #7E7E7E;
-}
-
-.card {
-    background-color: white;
-    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.16);
+:root {
+    --primary: white;
+    --secondary: #0D0D0D;
+    --special-text: #7E7E7E;
+    --link: #3cff00;
+    --background: #424242;
+    --shadow-color: rgba(0, 0, 0, 0.16);
+    --input-border: #CCCCCC;
+    --text-color: white;
 }

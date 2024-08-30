@@ -6,8 +6,8 @@ window.main = new class {
         this.storageTest()
         this.initMenu()
         document.querySelector("#search").addEventListener("keyup", () => this.mySearch())
-        document.querySelector(".card-row").innerHTML = this.getData().map((item, index) => this.getCardHtml(item, index)).join("") 
-        document.querySelector("#theme").addEventListener("change", () => this.setStyleSource("light", this.options[this.selectedIndex].value))
+        document.querySelector(".card-row").innerHTML = this.getData().map((item, index) => this.getCardHtml(item, index)).join("")
+        document.querySelector("#theme-selector").onchange = () => document.querySelector("#color-theme").href = document.querySelector("#theme-selector").value + ".css"
 
     }
 
@@ -30,7 +30,7 @@ window.main = new class {
                     <div class="btn-link">
                     Get Started
                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.7656 17.0573L17.8489 9.97396M17.8489 9.97396L10.7656 2.89062M17.8489 9.97396H2.22394" stroke="#BD0000" stroke-linecap="round"/>
+                        <path d="M10.7656 17.0573L17.8489 9.97396M17.8489 9.97396L10.7656 2.89062M17.8489 9.97396H2.22394" stroke="var(--link)" stroke-linecap="round"/>
                     </svg>
                     </div>      
                 </div>
@@ -56,7 +56,7 @@ window.main = new class {
         let src_text = document.querySelector("#search").value.toLowerCase()
         let results = []
         // console.log(src_text)
-        Array.from(document.querySelectorAll(".card")).map(card => {
+        document.querySelectorAll(".card").forEach(card => {
             let content = card.querySelector(".content")
             let found = false
             sub_items.map(sub_item => {
@@ -71,23 +71,19 @@ window.main = new class {
         results.map(item => item.style.display = "block")
         return results
     }
-    
+
     storageTest() {
         const container = document.querySelector(".dashboard")
         const colorPicker = document.querySelector("#color-picker")
         const color = localStorage.getItem("favColor")
-            if (color) {
-                container.style.backgroundColor = color
-                colorPicker.value = color
-            }
+        if (color) {
+            container.style.backgroundColor = color
+            colorPicker.value = color
+        }
         colorPicker.addEventListener("change", (e) => {
-        container.style.backgroundColor = e.target.value
-        localStorage.setItem("favColor", e.target.value)
+            container.style.backgroundColor = e.target.value
+            localStorage.setItem("favColor", e.target.value)
         })
     }
 
-    setStyleSource(linkID, sourceLoc) {
-        var theLink = document.getElementById(linkID)
-        theLink.href = sourceLoc
-    }      
 }
