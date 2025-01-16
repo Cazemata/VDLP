@@ -3,12 +3,24 @@ import category from './categories.json' with { type: "json" }
 
 window.main = new class {
     constructor() {
-        this.storageTest()
+        this.themeSet()
         this.initMenu()
         document.querySelector("#search").addEventListener("keyup", () => this.mySearch())
         document.querySelector(".card-row").innerHTML = this.getData().map((item, index) => this.getCardHtml(item, index)).join("")
-        document.querySelector("#theme-selector").onchange = () => document.querySelector("#color-theme").href = document.querySelector("#theme-selector").value + ".css"
 
+    }
+
+    themeSet() {
+        const themeSelector = document.querySelector("#theme-selector")
+        const theme = localStorage.getItem("favTheme")
+        if (theme) {
+            document.querySelector("#color-theme").href = theme + ".css"
+            themeSelector.value = theme
+        }
+        themeSelector.addEventListener("change", (e) => {
+            document.querySelector("#color-theme").href = e.target.value + ".css"
+            localStorage.setItem("favTheme", e.target.value)
+        })
     }
 
     getData() {
@@ -71,19 +83,4 @@ window.main = new class {
         results.map(item => item.style.display = "block")
         return results
     }
-
-    storageTest() {
-        const container = document.querySelector(".dashboard")
-        const colorPicker = document.querySelector("#color-picker")
-        const color = localStorage.getItem("favColor")
-        if (color) {
-            container.style.backgroundColor = color
-            colorPicker.value = color
-        }
-        colorPicker.addEventListener("change", (e) => {
-            container.style.backgroundColor = e.target.value
-            localStorage.setItem("favColor", e.target.value)
-        })
-    }
-
 }

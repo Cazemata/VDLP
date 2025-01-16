@@ -63,6 +63,7 @@ body {
 
 .active {
     font-weight: 800;
+    color: var(--link);
 }
 
 .bottom-menu {
@@ -187,6 +188,14 @@ input[type=text]:focus {
     border: 1px solid var(--input-border);
 }
 
+input[type=text]::placeholder {
+    color: var(--primary);
+}
+
+select {
+    color: var(--primary)
+}
+
 .image {
     grid-area: image;
     background-image: url(res/mountain.jpg);
@@ -214,11 +223,12 @@ input[type=text]:focus {
 }
 
 img {
-    border-radius: 20px;
+    border-radius: 50%;
     overflow: hidden;
 }
 
 .right-bar {
+    visibility: hidden;
     grid-area: right-bar;
     border-radius: 6px;
     background-color: var(--secondary);
